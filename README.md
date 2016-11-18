@@ -4,3 +4,27 @@ Redundant sensing on BACnet FP (router). This is the code on BACnet router who f
 
 AV#1 on physical devices is reflected as AV#1 here.
 
+The router automatically find PD with BACnet device ID 123 and forwards the request to PD.
+
+PD address is manually set up in src-> rp.c ->forward_rp_req-> device_id.
+
+Note that all devices have to be within the same subnet.
+
+For the code to run on Pi, need to modify rp.c and wp.c change for (int i = 0; i < ..) to int i; for(i = 0; i < ..)
+and sudo make.
+
+# How to run the code 
+
+ReadProp $ demo/readprop/bacrp
+
+bacrp device-instance object-type object-instance property [index]
+
+./bin/bacrp 1234 1 0 85
+
+WriteProp $ demo/writeprop/bacwp
+
+bacwp device-instance object-type object-instance property priority index tag value [tag value...]
+
+./bin/bacwp 1234 1 0 85 16 -1 4 100
+
+(Note: object #1 is for analog output objects)
