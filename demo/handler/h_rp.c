@@ -246,7 +246,8 @@ void handler_read_property_ack2(
         goto RP_FAILURE;
     }
 
-    for (int i = 0; i < apdu_len; ++i){
+    int i;
+    for (i = 0; i < apdu_len; ++i){
         Handler_Transmit_Buffer_ACK[npdu_len + i] = apdu[i];
     }
     fprintf(stderr, "Finish copying apdu to ack buffer in h_rp.c.\n");

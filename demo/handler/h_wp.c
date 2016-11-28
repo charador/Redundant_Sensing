@@ -174,7 +174,8 @@ void handler_write_property_ack2(
     fprintf(stderr, "WP: Received Request!\n");
 #endif
     
-    for (int i = 0; i < apdu_len; ++i){
+    int i;
+    for (i = 0; i < apdu_len; ++i){
         Handler_Transmit_Buffer_ACK[npdu_len + i] = apdu[i];
     }
     fprintf(stderr, "Finish copying apdu to ack buffer in h_wp.c.\n");
