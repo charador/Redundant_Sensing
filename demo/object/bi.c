@@ -40,7 +40,7 @@
 #include "handlers.h"
 
 #ifndef MAX_BINARY_INPUTS
-#define MAX_BINARY_INPUTS 5
+#define MAX_BINARY_INPUTS 100
 #endif
 
 /* stores the current value */

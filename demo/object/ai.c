@@ -42,7 +42,7 @@
 
 
 #ifndef MAX_ANALOG_INPUTS
-#define MAX_ANALOG_INPUTS 4
+#define MAX_ANALOG_INPUTS 100
 #endif
 
 

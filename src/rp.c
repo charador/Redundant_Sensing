@@ -128,11 +128,11 @@ int forward_rp_req(BACNET_READ_PROPERTY_DATA * rpdata, uint8_t invoke_id) {
         //if status == 1, found device_id in address_cache, set max_apdu and dest
         status = address_get_by_device(device_id, &max_apdu, &dest);
         if (status) {
-            fprintf(stderr, "Found Physical Device ID, now sending RP req...\n");
+            fprintf(stderr, "Forwarding RP Req to Device 123...\n");
             invoke_id =
                     Forward_Read_Property_Request_Address(&dest, max_apdu, rpdata->object_type,
                     rpdata->object_instance, rpdata->object_property, rpdata->array_index, invoke_id);
-            fprintf(stderr, "RP req forwarded to Physical Devices\n");
+            fprintf(stderr, "RP Req sent\n");
         }
 
         return invoke_id;

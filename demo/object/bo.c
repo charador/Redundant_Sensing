@@ -39,7 +39,7 @@
 #include "handlers.h"
 
 #ifndef MAX_BINARY_OUTPUTS
-#define MAX_BINARY_OUTPUTS 4
+#define MAX_BINARY_OUTPUTS 100
 #endif
 
 /* When all the priorities are level null, the present value returns */

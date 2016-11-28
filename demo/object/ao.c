@@ -38,7 +38,7 @@
 #include "handlers.h"
 
 #ifndef MAX_ANALOG_OUTPUTS
-#define MAX_ANALOG_OUTPUTS 4
+#define MAX_ANALOG_OUTPUTS 100
 #endif
 
 /* we choose to have a NULL level in our system represented by */
