@@ -100,7 +100,7 @@ void handler_read_property(
     // decode apdu packet and forward the request to another device
     len = rp_decode_service_request(service_request, service_len, &rpdata, service_data->invoke_id);
     //set oldsrc
-    rp_serv_addr = src;
+   // rp_serv_addr = src;
         
 #if PRINT_ENABLED
     if (len <= 0) {
@@ -226,7 +226,7 @@ void handler_read_property_ack2(
     int bytes_sent = 0;
     BACNET_ADDRESS my_address;
 
-    fprintf(stderr, "Entering handler_WP2 in h_rp.c.\n");
+    fprintf(stderr, "Entering handler_RP2 in h_rp.c.\n");
     /* configure default error code as an abort since it is common */
     rpdata.error_code = ERROR_CODE_ABORT_SEGMENTATION_NOT_SUPPORTED;
     /* encode the NPDU portion of the packet */
