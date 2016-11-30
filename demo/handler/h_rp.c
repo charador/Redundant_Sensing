@@ -235,7 +235,7 @@ void handler_read_property_ack2(
     //set up NPCI header field npdu_data
     npdu_encode_npdu_data(&npdu_data, false, MESSAGE_PRIORITY_NORMAL);
     npdu_len =
-        npdu_encode_pdu(&Handler_Transmit_Buffer_ACK[0], src, &my_address,
+        npdu_encode_pdu(&Handler_Transmit_Buffer_ACK[0], src, &my_address,//src!!
         &npdu_data);//set up handler transmit buffer by injecting npci/src/dst addr info
     if (service_ack_data->segmented_message) {
         /* we don't support segmentation - send an abort */

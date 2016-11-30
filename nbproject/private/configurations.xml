@@ -153,6 +153,7 @@
         </df>
         <df name="readprop">
           <in>main.c</in>
+          <in>main_backup.c</in>
         </df>
         <df name="readpropm">
           <in>main.c</in>

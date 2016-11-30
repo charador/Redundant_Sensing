@@ -170,6 +170,51 @@ int main(
     /* load any static address bindings to show up
        in our device bindings list */
     address_init();
+    
+    /*manually address binding to PD, fp1, and fp2*/
+    BACNET_ADDRESS pd = {
+        0
+    };
+    
+    pd.mac_len = 6;
+    pd.mac[0]= (uint8_t)165;
+    pd.mac[1] = (uint8_t)91;
+    pd.mac[2] = (uint8_t)214;
+    pd.mac[3] = (uint8_t)125;
+    pd.mac[4] = (uint8_t)186;
+    pd.mac[5] = (uint8_t)192;
+    
+    
+    BACNET_ADDRESS fp1 = {
+        0
+    };
+    fp1.mac_len = 6;
+    fp1.mac[0]= (uint8_t)165;
+    fp1.mac[1] = (uint8_t)91;
+    fp1.mac[2] = (uint8_t)214;
+    fp1.mac[3] = (uint8_t)209;
+    fp1.mac[4] = (uint8_t)186;
+    fp1.mac[5] = (uint8_t)192;
+    
+    BACNET_ADDRESS fp2 = {
+        0
+    };
+    fp1.mac_len = 6;
+    fp1.mac[0]= (uint8_t)165;
+    fp1.mac[1] = (uint8_t)91;
+    fp1.mac[2] = (uint8_t)215;
+    fp1.mac[3] = (uint8_t)233;
+    fp1.mac[4] = (uint8_t)186;
+    fp1.mac[5] = (uint8_t)192;
+    
+    address_add((uint32_t)123, MAX_APDU, &pd);
+    address_add((uint32_t)321, MAX_APDU, &fp1);
+    address_add((uint32_t)456, MAX_APDU, &fp2);
+    address_add_binding((uint32_t)123, MAX_APDU, &pd);
+    address_add_binding((uint32_t)321, MAX_APDU, &fp1);
+    address_add_binding((uint32_t)456, MAX_APDU, &fp2);
+    
+    
     Init_Service_Handlers();
     dlenv_init();
     atexit(datalink_cleanup);
