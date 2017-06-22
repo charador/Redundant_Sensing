@@ -2,11 +2,13 @@
 
 Redundant sensing on BACnet FP (router). This is the code on BACnet router who forwards commands from the workstation to physical devices (also bacnet devices). It reflects object names on physical devices on the FP. It works for any commands (read/write). It should run as .bacserv
 
-AV#1 on physical devices is reflected as AV#1 here.
+AV#1 on physical devices is reflected as AV#1 here. Objects ID are sequentially mapped as default.
 
-The router automatically find PD with BACnet device ID 123 and forwards the request to PD.
+Currently it supports ReadProperty and WriteProperty services.
 
-PD address is manually set up in src-> rp.c ->forward_rp_req-> device_id.
+The router automatically discovers PD with BACnet device ID "123" and forwards the request to PD.
+
+PD device ID is manually set up in src-> rp.c ->forward_rp_req-> device_id.
 
 Note that all devices have to be within the same subnet.
 
