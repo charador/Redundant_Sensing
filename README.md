@@ -10,9 +10,6 @@ PD address is manually set up in src-> rp.c ->forward_rp_req-> device_id.
 
 Note that all devices have to be within the same subnet.
 
-For the code to run on Pi, need to modify rp.c and wp.c change for (int i = 0; i < ..) to int i; for(i = 0; i < ..)
-and sudo make.
-
 # How to run the code 
 
 ReadProp $ demo/readprop/bacrp
